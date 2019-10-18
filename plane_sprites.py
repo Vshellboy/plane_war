@@ -116,8 +116,6 @@ class Hero(GameSprite):
         if self.rect.y < (SCREEN_RECT.height)/2:
             self.rect.y = (SCREEN_RECT.height)/2
 
-
-
     def fire(self):
         # print("发射子弹...")
         for i in (0,1):
@@ -136,6 +134,7 @@ class Bullet(GameSprite):
 
         # 调用父类方法，设置子弹图片，设置初始速度
         super().__init__("./images/bullet1.png",-2)
+
     def update(self):
 
         # 调用父类方法，让子弹沿垂直方向飞行
@@ -145,5 +144,5 @@ class Bullet(GameSprite):
         if self.rect.bottom <0:
             self.kill()
 
-        def __del__(self):
-            print("子弹杯销毁")
+        # def __del__(self):
+        #     print("子弹被销毁")
